@@ -10,13 +10,15 @@ class Navbar extends React.Component {
 
     // Scrolling Effect
 
-    $(window).on('scroll', function() {
-      if ($(window).scrollTop()) {
-        $('nav').addClass('black');
-      } else {
-        $('nav').removeClass('black');
-      }
-    });
+    // $(window).on('scroll', function() {
+    //   if ($(window).scrollTop()) {
+    //     $('nav')
+    //       .addClass('black')
+    //       .css({ position: 'relative' });
+    //   } else {
+    //     $('nav').removeClass('black');
+    //   }
+    // });
     return (
       <div className="wrapper">
         <header>
