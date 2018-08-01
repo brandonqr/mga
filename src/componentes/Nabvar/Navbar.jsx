@@ -2,67 +2,49 @@ import React from 'react';
 import './Navbar.css';
 class Navbar extends React.Component {
   render() {
+    $(document).ready(function() {
+      $('.menu-icon').on('click', function() {
+        $('nav ul').toggleClass('showing');
+      });
+    });
+
+    // Scrolling Effect
+
+    $(window).on('scroll', function() {
+      if ($(window).scrollTop()) {
+        $('nav').addClass('black');
+      } else {
+        $('nav').removeClass('black');
+      }
+    });
     return (
-      <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-          <a className="navbar-brand" href="#">
-            <img width="30" height="30" className="d-inline-block align-top" alt="" /> Bootstrap
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
-              <li className="nav-item active">
-                <a className="nav-link" href="#">
-                  Home
-                  <span className="sr-only">(current)</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Pricing
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Dropdown link
-                </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
+      <div className="wrapper">
+        <header>
+          <nav>
+            <div className="menu-icon">
+              <i className="fa fa-bars" />
+            </div>
+
+            <div className="logo">LOGO</div>
+
+            <div className="menu">
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">About</a>
+                </li>
+                <li>
+                  <a href="#">Blog</a>
+                </li>
+                <li>
+                  <a href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
       </div>
     );
   }
